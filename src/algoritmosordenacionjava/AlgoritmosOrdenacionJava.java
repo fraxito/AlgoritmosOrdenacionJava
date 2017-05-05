@@ -30,6 +30,22 @@ public class AlgoritmosOrdenacionJava {
         }
     } 
  
+    public void ordenacionBurbujaConWhile( int [ ] numeros ){
+        boolean cambio = true;
+        int aux;  
+        while (cambio){
+            cambio = false;
+            for(int i=0;  i < numeros.length -1;  i++ ){
+                if ( numeros[ i ] > numeros[i+1] ) {
+                    aux = numeros[ i ];                //intercambia los elementos
+                    numeros[ i ] = numeros[ i+1 ];
+                    numeros[ i+1 ] = aux;
+                    cambio = true;
+                } 
+            } 
+        }
+    } 
+    
     
     /**
      * @param args the command line arguments
@@ -37,7 +53,8 @@ public class AlgoritmosOrdenacionJava {
     public static void main(String[] args) {
         int [] listaNumeros = {57,22, 11, 13, 21, 7};
         AlgoritmosOrdenacionJava ejercicio1 = new AlgoritmosOrdenacionJava();
-        ejercicio1.ordenacionBurbuja(listaNumeros);
+        //ejercicio1.ordenacionBurbuja(listaNumeros);
+        ejercicio1.ordenacionBurbujaConWhile(listaNumeros);
         ejercicio1.imprimeArray(listaNumeros);
         
     }
