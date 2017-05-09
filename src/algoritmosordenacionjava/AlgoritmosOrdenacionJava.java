@@ -46,15 +46,28 @@ public class AlgoritmosOrdenacionJava {
         }
     } 
     
+    public void insertSort(int[] numeros) {
+        for (int i = 2; i < numeros.length; i++) {
+            int aux = numeros[i];
+            int j=0; //declaro la j fuera del bucle for interior porque necesito utilizar su valor fuera del bucle interior
+            for (j = i - 1; j >= 0 && numeros[j] > aux; j--) {  //desplaza los números del array en la parte ordenada, hasta que j vale -1
+                                                                //o hasta que es menor que el comparado
+                numeros[j + 1] = numeros[j];
+            }
+            numeros[j + 1] = aux;  //coloca el valor comparado en su posición correspondiente
+        }
+    }
+
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int [] listaNumeros = {57,22, 11, 13, 21, 7};
+        int [] listaNumeros = {1,57,22, 11, 13, 21, 7,1,2,22,0};
         AlgoritmosOrdenacionJava ejercicio1 = new AlgoritmosOrdenacionJava();
         //ejercicio1.ordenacionBurbuja(listaNumeros);
-        ejercicio1.ordenacionBurbujaConWhile(listaNumeros);
+        //ejercicio1.ordenacionBurbujaConWhile(listaNumeros);
+        ejercicio1.insertSort(listaNumeros);
         ejercicio1.imprimeArray(listaNumeros);
         
     }
