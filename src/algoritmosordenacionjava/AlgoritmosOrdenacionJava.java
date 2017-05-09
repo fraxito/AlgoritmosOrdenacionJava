@@ -46,7 +46,7 @@ public class AlgoritmosOrdenacionJava {
         }
     } 
     
-    public void insertSort(int[] numeros) {
+    public void inserccionDirecta(int[] numeros) {
         for (int i = 2; i < numeros.length; i++) {
             int aux = numeros[i];
             int j=0; //declaro la j fuera del bucle for interior porque necesito utilizar su valor fuera del bucle interior
@@ -67,7 +67,7 @@ public class AlgoritmosOrdenacionJava {
         AlgoritmosOrdenacionJava ejercicio1 = new AlgoritmosOrdenacionJava();
         //ejercicio1.ordenacionBurbuja(listaNumeros);
         //ejercicio1.ordenacionBurbujaConWhile(listaNumeros);
-        ejercicio1.insertSort(listaNumeros);
+        ejercicio1.inserccionDirecta(listaNumeros);
         ejercicio1.imprimeArray(listaNumeros);
         
     }
