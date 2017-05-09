@@ -46,7 +46,7 @@ public class AlgoritmosOrdenacionJava {
         }
     } 
     
-    public void inserccionDirecta(int[] numeros) {
+    public void insercionDirecta(int[] numeros) {
         for (int i = 2; i < numeros.length; i++) {
             int aux = numeros[i];
             int j=0; //declaro la j fuera del bucle for interior porque necesito utilizar su valor fuera del bucle interior
@@ -57,7 +57,19 @@ public class AlgoritmosOrdenacionJava {
             numeros[j + 1] = aux;  //coloca el valor comparado en su posición correspondiente
         }
     }
+    
+    public void insercionDirectaWhile(int[] numeros) {
+    for (int i = 1; i < numeros.length; i++) {
+			int aux = numeros[i];
+			int j = i;
+			while (j > 0 && numeros[j - 1] > aux) {
+				numeros[j] = numeros[j - 1];
+				j--;
+			}
+			numeros[j] = aux;
+		}
 
+    }
     
     /**
      * @param args the command line arguments
@@ -67,7 +79,8 @@ public class AlgoritmosOrdenacionJava {
         AlgoritmosOrdenacionJava ejercicio1 = new AlgoritmosOrdenacionJava();
         //ejercicio1.ordenacionBurbuja(listaNumeros);
         //ejercicio1.ordenacionBurbujaConWhile(listaNumeros);
-        ejercicio1.inserccionDirecta(listaNumeros);
+        //ejercicio1.insercionDirecta(listaNumeros);
+        ejercicio1.insercionDirectaWhile(listaNumeros);
         ejercicio1.imprimeArray(listaNumeros);
         
     }
