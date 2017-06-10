@@ -105,6 +105,27 @@ public class AlgoritmosOrdenacionJava {
         }
     }
 
+    public void shellsort(int numeros[]) {
+        int salto, aux;
+        boolean intercambio;
+        for (salto = numeros.length / 2; salto != 0; salto /= 2) {
+            intercambio = true;
+            while (intercambio) {
+                intercambio = false;
+                for (int i = salto; i < numeros.length; i += salto) {// se da una pasada incrementando de salto en salto
+                    if (numeros[i - salto] > numeros[i]) {
+                        //si los números están desordenados los intercambio y lo indico
+                        aux = numeros[i];
+                        numeros[i] = numeros[i - salto];
+                        numeros[i - salto] = aux;
+                        intercambio = true;
+                    }
+                }
+            }
+        }
+    }
+    
+
 
     
     /**
@@ -118,8 +139,8 @@ public class AlgoritmosOrdenacionJava {
         //ejercicio1.insercionDirecta(listaNumeros);
         //ejercicio1.insercionDirectaWhile(listaNumeros);
         
-        ejercicio1.quickSort(listaNumeros, 0, listaNumeros.length-1);
-        
+        //ejercicio1.quickSort(listaNumeros, 0, listaNumeros.length-1);
+        ejercicio1.shellsort(listaNumeros);
         ejercicio1.imprimeArray(listaNumeros);
         
     }
